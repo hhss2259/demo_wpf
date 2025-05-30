@@ -33,9 +33,9 @@
                             <RowDefinition Height="1*"></RowDefinition>
                             <RowDefinition Height="30"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <TextBlock Text="{Binding FirstUiModel.Title}"  IsEnabled="{Binding FirstUiModel.IsEnabled}" Opacity="{Binding FirstUiModel.IsEnabled}"
-                                   FontSize="15"  VerticalAlignment="Center" Margin="10, 0, 0, 0" FontWeight="Bold"  />
-                        <Button Grid.Row="2" Margin="5" Content="{Binding FirstButton.Text}"></Button>
+                        <TextBlock  FontSize="15"  VerticalAlignment="Center" Margin="10, 0, 0, 0" FontWeight="Bold" 
+                                    Text="{Binding FirstUiModel.Title}"  IsEnabled="{Binding FirstUiModel.IsEnabled}" Opacity="{Binding FirstUiModel.IsEnabled}"/>
+                        <Button Grid.Row="2" Margin="5" Content="{Binding FirstButton.Title}"  IsEnabled="{Binding FirstButton.IsEnabled}" Opacity="{Binding FirstButton.IsEnabled}"></Button>
                     </Grid>
                 </Border>
                 <Grid Grid.Row="1">

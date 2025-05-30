@@ -10,7 +10,7 @@ namespace demo_wpf.ViewModels.UiModels
 {
     public class ThirdUiModel : ABaseUiModel
     {
-        private string _title = "Ui 요소 3";
+        private string _title = "세번째 UI 모델";
         private string _text;
         private double _opacity;
         private bool _isEnabled;
