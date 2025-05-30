@@ -5,23 +5,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace demo_wpf.ViewModels.UiModels
 {
-    public class SecondUiModel : ABaseUiModel
+    public class ThirdUiModel : ABaseUiModel
     {
-        private string _title = "Ui 요소 2";
+        private string _title = "Ui 요소 3";
         private string _text;
         private double _opacity;
         private bool _isEnabled;
 
-        private Func<string?, EventHandler> makeTargetedUiHandler;
-        private Func<string?, EventHandler> makeUntargetedUiHandler;
-        //추가적인 ui 변경 요소!!!
+        private Func<string, EventHandler> makeTargetedUiHandler;
+        private Func<string, EventHandler> makeUntargetedUiHandler;
+
         public Action<string> MakeLog;
 
-        public SecondUiModel(StateEventManager stateEventManager)
+        public ThirdUiModel(StateEventManager stateEventManager)
         {
             makeTargetedUiHandler = (string? text) =>
             {
@@ -47,8 +46,8 @@ namespace demo_wpf.ViewModels.UiModels
                     IsEnabled = false;
                 };
             };
-            MakeLog = (string step) =>
-            {
+
+            MakeLog = (string step) => {
 
                 if (step is string currentStep)
                 {
@@ -64,6 +63,7 @@ namespace demo_wpf.ViewModels.UiModels
             };
             stateEventManager.RegisterStateChangedEventListener(this);
         }
+
 
         public override bool HasNotReadyUi(out EventHandler changeUi)
         {
@@ -122,7 +122,6 @@ namespace demo_wpf.ViewModels.UiModels
                 OnPropertyChanged(nameof(IsEnabled));
             }
         }
-
         public string Title
         {
             get => _title;

@@ -33,8 +33,9 @@
                             <RowDefinition Height="1*"></RowDefinition>
                             <RowDefinition Height="30"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <TextBlock Text="UI 요소1"  FontSize="15"  VerticalAlignment="Center" Margin="10, 0, 0, 0" FontWeight="Bold"/>
-                        <Button Grid.Row="2" Margin="5" Content="버튼1(UI 요소5)"></Button>
+                        <TextBlock Text="{Binding FirstUiModel.Title}"  IsEnabled="{Binding FirstUiModel.IsEnabled}" Opacity="{Binding FirstUiModel.IsEnabled}"
+                                   FontSize="15"  VerticalAlignment="Center" Margin="10, 0, 0, 0" FontWeight="Bold"  />
+                        <Button Grid.Row="2" Margin="5" Content="{Binding FirstButton.Text}"></Button>
                     </Grid>
                 </Border>
                 <Grid Grid.Row="1">
@@ -103,12 +104,8 @@
                         <ColumnDefinition Width="1*"></ColumnDefinition>
                         <ColumnDefinition Width="1*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Content="NotReady" Margin="10"></Button>
-                    <Button Grid.Column="1" Content="Ready" Margin="10"></Button>
-                    <Button Grid.Column="2" Content="Waiting" Margin="10"></Button>
-                    <Button Grid.Column="3" Content="Running" Margin="10"></Button>
-                    <Button Grid.Column="4" Content="Paused" Margin="10"></Button>
-                    <Button Grid.Column="5" Content="Completed" Margin="10"></Button>
+                    <Button Grid.Column="0" Content="장치 연결" Margin="10"></Button>
+                    <Button Grid.Column="1" Content="장치 연결 해제" Margin="10"></Button>
                 </Grid>
             </Grid>
         </Border>

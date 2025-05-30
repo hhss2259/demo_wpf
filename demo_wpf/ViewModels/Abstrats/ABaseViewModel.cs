@@ -15,14 +15,11 @@ namespace demo_wpf.ViewModels.Abstrats
         //StateEventMannager 관리
         Dictionary<string, StateEventManager> stateEventManagers = new Dictionary<string, StateEventManager>();
 
-        //기본으로 제공하는 StateEventManager
-        public StateEventManager DefaultStateEventManager { get; }
-
         //생성자에서 Default StateEventManager를 초기화하여 제공
         public ABaseViewModel()
         {
-            DefaultStateEventManager = new StateEventManager();
-            stateEventManagers.Add("Default", DefaultStateEventManager);
+            StateEventManager  defaultStateEventManager = new StateEventManager();
+            stateEventManagers.Add("Default", defaultStateEventManager);
         }
 
         //Default StateEventManager 외에 다른  StateEventManager를 추가할 수 있는 메소드
@@ -36,7 +33,11 @@ namespace demo_wpf.ViewModels.Abstrats
             {
                 throw new ArgumentException($"StateEventManager with name '{name}' already exists.");
             }
-
+        }
+        //DefaultStataEventManager를 가져오는 메소드
+        protected StateEventManager GetDefaultStateEventManager()
+        {
+            return GetStateEventManager("Default");
         }
 
         //이름으로 StateEventManager를 가져오는 메소드
