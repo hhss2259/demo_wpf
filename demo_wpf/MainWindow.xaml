@@ -34,8 +34,9 @@
                             <RowDefinition Height="30"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock  FontSize="15"  VerticalAlignment="Center" Margin="10, 0, 0, 0" FontWeight="Bold" 
-                                    Text="{Binding FirstUiModel.Title}"  IsEnabled="{Binding FirstUiModel.IsEnabled}" Opacity="{Binding FirstUiModel.IsEnabled}"/>
-                        <Button Grid.Row="2" Margin="5" Content="{Binding FirstButton.Title}"  IsEnabled="{Binding FirstButton.IsEnabled}" Opacity="{Binding FirstButton.IsEnabled}"></Button>
+                                    Text="{Binding FirstUiModel.Title}"  IsEnabled="{Binding FirstUiModel.IsEnabled}" Opacity="{Binding FirstUiModel.Opacity}"/>
+                        <Button Grid.Row="2" Margin="5" Content="{Binding FirstButtonUiModel.Title}"  IsEnabled="{Binding FirstButtonUiModel.IsEnabled}" Opacity="{Binding FirstButtonUiModel.Opacity}"
+                                Command="{Binding FirstCommand}"></Button>
                     </Grid>
                 </Border>
                 <Grid Grid.Row="1">
@@ -49,7 +50,9 @@
                                 <RowDefinition Height="40"/>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
-                            <TextBlock Text="UI 요소2"  FontSize="15"  VerticalAlignment="Center" Margin="10, 0, 0, 0" FontWeight="Bold"/>
+                            <TextBlock FontSize="15"  VerticalAlignment="Center" Margin="10, 0, 0, 0" FontWeight="Bold"
+                                       Text="{Binding SecondUiModel.Title}"  IsEnabled="{Binding SecondUiModel.IsEnabled}" Opacity="{Binding SecondUiModel.Opacity}"/>
+                            <TextBox Grid.Row="1" Text="{Binding SecondUiModel.Text}" d:Text="[대기]"/>
                         </Grid>
                     </Border>
                     <Border Grid.Column="1" Background="White" BorderBrush="Black" BorderThickness="1" Margin="10">
@@ -58,13 +61,15 @@
                                 <RowDefinition Height="40"/>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
-                            <TextBlock Text="UI 요소3"  FontSize="15"  VerticalAlignment="Center" Margin="10, 0, 0, 0" FontWeight="Bold"/>
+                            <TextBlock  FontSize="15"  VerticalAlignment="Center" Margin="10, 0, 0, 0" FontWeight="Bold"
+                                        Text="{Binding ThirdUiModel.Title}"  IsEnabled="{Binding ThirdUiModel.IsEnabled}" Opacity="{Binding ThirdUiModel.Opacity}"/>
+                            <TextBox Grid.Row="1" Text="{Binding ThirdUiModel.Text}" d:Text="[대기]"/>
                         </Grid>
                     </Border>
                 </Grid>
                 <Grid Grid.Row="2">
                     <Border BorderBrush="Black" BorderThickness="1" Margin="5">
-                        <Button Content="버튼2(UI 요소6)"></Button>
+                        <Button Grid.Row="2" Margin="5" Content="{Binding SecondButtonUiModel.Title}"  IsEnabled="{Binding SecondButtonUiModel.IsEnabled}" Opacity="{Binding SecondButtonUiModel.Opacity}" Command="{Binding SecondCommand}"></Button>
                     </Border>
                 </Grid>
             </Grid>
@@ -77,11 +82,14 @@
                                 <RowDefinition Height="1*"></RowDefinition>
                                 <RowDefinition Height="50"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <TextBlock Text="UI 요소4"  FontSize="15"  VerticalAlignment="Center" Margin="10, 0, 0, 0" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding FourthUiModel.Title}" IsEnabled="{Binding FourthUiModel.IsEnabled}" Opacity="{Binding FourthUiModel.Opacity}" FontSize="15"  VerticalAlignment="Center" Margin="10, 0, 0, 0" FontWeight="Bold"/>
                             <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
-                                <Button Content="버튼3(UI 요소7)" Width="100" Margin="10"></Button>
-                                <Button Content="버튼4(UI 요소8)" Width="100" Margin="10"></Button>
-                                <Button Content="버튼5(UI 요소9)" Width="100" Margin="10"></Button>
+                                <Button Width="100" Margin="10"  Content="{Binding ThirdButtonUiModel.Title}"  IsEnabled="{Binding ThirdButtonUiModel.IsEnabled}" Opacity="{Binding ThirdButtonUiModel.Opacity}"
+                                        Command="{Binding ThirdCommand}"></Button>
+                                <Button Width="100" Margin="10"  Content="{Binding FourthButtonUiModel.Title}"  IsEnabled="{Binding FourthButtonUiModel.IsEnabled}" Opacity="{Binding FourthButtonUiModel.Opacity}"
+                                        Command="{Binding FourthCommand}"></Button>
+                                <Button Width="100" Margin="10"  Content="{Binding FifthButtonUiModel.Title}"  IsEnabled="{Binding FifthButtonUiModel.IsEnabled}" Opacity="{Binding FifthButtonUiModel.Opacity}"
+                                        Command="{Binding FifthCommand}"></Button>
                             </StackPanel>
                         </Grid>
                     </Grid>
@@ -104,8 +112,10 @@
                         <ColumnDefinition Width="1*"></ColumnDefinition>
                         <ColumnDefinition Width="1*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Content="장치 연결" Margin="10"></Button>
-                    <Button Grid.Column="1" Content="장치 연결 해제" Margin="10"></Button>
+                    <Button  Content="{Binding ConnectButtonUiModel.Title}" IsEnabled="{Binding ConnectButtonUiModel.IsEnabled}"  Opacity="{Binding ConnectButtonUiModel.Opacity}" 
+                            Command="{Binding ConnectCommand}" Grid.Column="0"  Margin="10"></Button>
+                    <Button  Content="{Binding DisconnectButtonUiModel.Title}" IsEnabled="{Binding DisconnectButtonUiModel.IsEnabled}"  Opacity="{Binding DisconnectButtonUiModel.Opacity}" 
+                            Command="{Binding DisconnectCommand}" Grid.Column="1"  Margin="10"></Button>
                 </Grid>
             </Grid>
         </Border>

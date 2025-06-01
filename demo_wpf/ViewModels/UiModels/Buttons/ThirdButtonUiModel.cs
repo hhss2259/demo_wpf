@@ -12,7 +12,7 @@ namespace demo_wpf.ViewModels.UiModels.Buttons
     {
         public ThirdButtonUiModel(StateEventManager stateEventManager) : base(stateEventManager)
         {
-            Title = "버튼3(Ui 요소 7)";
+            Title = "시험 종료";
         }
         // Untarget
         public override bool HasReadyUi(out EventHandler changeUi)

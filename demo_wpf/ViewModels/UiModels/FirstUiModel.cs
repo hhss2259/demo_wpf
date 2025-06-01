@@ -14,7 +14,7 @@ namespace demo_wpf.ViewModels.UiModels
         private EventHandler MakeTargetedUi;
         private EventHandler MakeUntargetedUi;
 
-        private string _title = "Ui 요소 1";   
+        private string _title = "시험 설정";   
         private bool _isEnabled = false;
         private double _opacity = 0.6;
 
@@ -27,11 +27,12 @@ namespace demo_wpf.ViewModels.UiModels
             stateEventManager.RegisterStateChangedEventListener(this);
         }
 
-        public override bool HasNotReadyUi(out EventHandler changeUi)
+        public override bool HasNotReadyUi (out EventHandler changeUi)
         {
             changeUi = MakeUntargetedUi;
             return true;
         }
+       
         public override bool HasReadyUi(out EventHandler changeUi)
         {
             changeUi = MakeTargetedUi;

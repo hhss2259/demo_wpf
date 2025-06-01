@@ -11,7 +11,7 @@ namespace demo_wpf.ViewModels.UiModels
 {
     public class SecondUiModel : ABaseUiModel
     {
-        private string _title = "Ui 요소 2";
+        private string _title = "시험1";
         private string _text;
         private double _opacity;
         private bool _isEnabled;

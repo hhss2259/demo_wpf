@@ -12,7 +12,7 @@ namespace demo_wpf.ViewModels.UiModels.Buttons
     {
         public FifthButtonUiModel(StateEventManager stateEventManager) : base(stateEventManager)
         {
-            Title = "버튼5(Ui 요소 9)";
+            Title = "시험 저장";
         }
 
         //Untarget

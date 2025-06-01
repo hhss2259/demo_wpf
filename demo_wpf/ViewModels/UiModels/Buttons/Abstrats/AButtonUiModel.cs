@@ -35,6 +35,13 @@ namespace demo_wpf.ViewModels.UiModels.Buttons.Abstrats
 
             stateEventManager.RegisterStateChangedEventListener(this);
         }
+
+        public override bool HasNotReadyUi(out EventHandler changeUi)
+        {
+            changeUi = MakeUntargetedButtonUi;
+            return true;
+        }
+
         public string Title
         {
             get => _title; set

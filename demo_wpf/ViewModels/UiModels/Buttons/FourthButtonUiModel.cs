@@ -13,7 +13,7 @@ namespace demo_wpf.ViewModels.UiModels.Buttons
     {
         public FourthButtonUiModel(StateEventManager stateEventManager) : base(stateEventManager)
         {
-            Title = "버튼4(Ui 요소 8)";
+            Title = "초기화";
         }
         // Untarget
         public override bool HasRunningUi(out EventHandler changeUi)
